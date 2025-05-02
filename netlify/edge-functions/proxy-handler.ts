@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std/http/server.ts";
+import type { Context } from "@netlify/edge-functions";
 
 const UUID: string = Deno.env.get("UUID") || "b29d5bf8-2a27-4f92-a6f4-53d1558e6ee1";
 const SUB_PATH: string = Deno.env.get("SUB_PATH") || "sub";  //获取订阅路径
@@ -393,9 +393,7 @@ function generatePadding(min: number, max: number): string {
   const length = min + Math.floor(Math.random() * (max - min));
   return btoa(Array(length).fill("X").join(""));
 }
-
-serve(
-  async (req: Request): Promise<Response> => {
+export default async (req: Request, context: Context): Promise<Response> => {
     const url = new URL(req.url);
     const path = url.pathname;
 
@@ -479,8 +477,4 @@ serve(
       }
     }
     return new Response("Not Found", { status: 404 });
-  },
-  { port: PORT, onListen: () => {
-    console.log(`Server is running on port ${PORT}`);
-  } }
-);
+  }
