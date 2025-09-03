@@ -136,7 +136,7 @@ const SPECIAL_REPLACEMENTS = {
 
 ### 方法一：一键部署
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gally16/netlify-proxy)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/derwalldrose/netlify-proxyxhttp)
 
 ### 方法二：手动部署
 
